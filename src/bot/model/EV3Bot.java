@@ -44,7 +44,7 @@ public class EV3Bot
 	private void setupPilot()
 	{
 		Wheel leftWheel = WheeledChassis.modelWheel(Motor.A, 43.3).offset(-72);
-		Wheel rightWheel = WheeledChassis.modelWheel(Motor.B, 43.3).offset(-72);
+		Wheel rightWheel = WheeledChassis.modelWheel(Motor.B, 43.3).offset(72);
 		WheeledChassis chassis = new WheeledChassis(new Wheel[] {leftWheel, rightWheel}, WheeledChassis.TYPE_DIFFERENTIAL);
 		botPilot = new MovePilot(chassis);
 	}
@@ -56,6 +56,7 @@ public class EV3Bot
 		if(ultrasonicSamples[0] < 2.5) //The 2.5 is not a real number. Figure out a better number
 		{
 			//Front door
+			displayMessage("Short Drive");
 			botPilot.travel(120);
 			botPilot.rotateRight();
 			botPilot.travel(360);
@@ -67,6 +68,7 @@ public class EV3Bot
 		else
 		{
 			//Back door
+			displayMessage("Long Drive");
 			botPilot.travel(480);
 			botPilot.rotateLeft();
 			botPilot.travel(660);
