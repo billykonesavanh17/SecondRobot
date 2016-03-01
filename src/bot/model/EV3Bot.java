@@ -55,7 +55,7 @@ public class EV3Bot
 		distanceSensor.fetchSample(ultrasonicSamples, 0);
 		if(ultrasonicSamples[0] < 2.5) //The 2.5 is not a real number. Figure out a better number
 		{
-			//Short method
+			//Front door
 			botPilot.travel(120);
 			botPilot.rotateRight();
 			botPilot.travel(360);
@@ -66,8 +66,14 @@ public class EV3Bot
 		}
 		else
 		{
-			//Long method
-			botPilot.travel(254.00);
+			//Back door
+			botPilot.travel(480);
+			botPilot.rotateLeft();
+			botPilot.travel(660);
+			botPilot.rotateRight();
+			botPilot.travel(360);
+			botPilot.rotateLeft();
+			botPilot.travel(120);
 		}
 		
 		//call private helper method here
