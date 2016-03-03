@@ -57,25 +57,25 @@ public class EV3Bot
 		{
 			//Front door
 			displayMessage("Short Drive");
-			botPilot.travel(120);
-			botPilot.rotateRight();
-			botPilot.travel(360);
-			botPilot.rotateLeft();
-			botPilot.travel(660);
-			botPilot.rotateRight();
-			botPilot.travel(480);
+			botPilot.travel(1200);
+			botPilot.rotate(90);
+			botPilot.travel(3600);
+			botPilot.rotate(-90);
+			botPilot.travel(6600);
+			botPilot.rotate(90);
+			botPilot.travel(4800);
 		}
 		else
 		{
 			//Back door
 			displayMessage("Long Drive");
-			botPilot.travel(480);
-			botPilot.rotateLeft();
-			botPilot.travel(660);
-			botPilot.rotateRight();
-			botPilot.travel(360);
-			botPilot.rotateLeft();
-			botPilot.travel(120);
+			botPilot.travel(4800);
+			botPilot.rotate(-90); //left
+			botPilot.travel(6600);
+			botPilot.rotate(90); //right
+			botPilot.travel(3600);
+			botPilot.rotate(-90);
+			botPilot.travel(1200);
 		}
 		
 		//call private helper method here
@@ -94,8 +94,6 @@ public class EV3Bot
 		Delay.msDelay(waitTime);
 	}
 	
-	
-	
-	
+
 }
 
