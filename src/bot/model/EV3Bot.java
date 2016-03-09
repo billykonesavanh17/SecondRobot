@@ -53,16 +53,16 @@ public class EV3Bot
 	{
 		ultrasonicSamples = new float[distanceSensor.sampleSize()];
 		distanceSensor.fetchSample(ultrasonicSamples, 0);
-		if(ultrasonicSamples[0] < 2.5) //The 2.5 is not a real number. Figure out a better number
+		if(ultrasonicSamples[0] < 1400) //The 2.5 is not a real number. Figure out a better number
 		{
 			//Front door
 			displayMessage("Short Drive");
 			botPilot.travel(1200);
-			botPilot.rotate(90);
+			botPilot.rotate(60);
 			botPilot.travel(3600);
-			botPilot.rotate(-90);
+			botPilot.rotate(-60);
 			botPilot.travel(6600);
-			botPilot.rotate(90);
+			botPilot.rotate(60);
 			botPilot.travel(4800);
 		}
 		else
@@ -70,11 +70,11 @@ public class EV3Bot
 			//Back door
 			displayMessage("Long Drive");
 			botPilot.travel(4800);
-			botPilot.rotate(-90); //left
+			botPilot.rotate(-60); //left
 			botPilot.travel(6600);
-			botPilot.rotate(90); //right
+			botPilot.rotate(60); //right
 			botPilot.travel(3600);
-			botPilot.rotate(-90);
+			botPilot.rotate(-60);
 			botPilot.travel(1200);
 		}
 		
