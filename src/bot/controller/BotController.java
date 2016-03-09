@@ -6,7 +6,7 @@ public class BotController
 {
 	private EV3Bot billyBot;
 	
-	private BotController()
+	public BotController()
 	{
 		billyBot = new EV3Bot();
 	}
