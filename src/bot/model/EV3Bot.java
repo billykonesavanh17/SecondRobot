@@ -82,6 +82,16 @@ public class EV3Bot
 		displayMessage("driveRoom");
 	}
 	
+	public void driveFree()
+	{
+		ultrasonicSamples = new float[distanceSensor.sampleSize()];
+		distanceSensor.fetchSample(ultrasonicSamples, 0);
+		if(ultrasonicSamples[0] < 500)
+		{
+			
+		}
+	}
+	
 	private void displayMessage()
 	{
 		LCD.drawString(botMessage,  xPosition,  yPosition);
