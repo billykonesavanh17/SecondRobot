@@ -86,9 +86,13 @@ public class EV3Bot
 	{
 		ultrasonicSamples = new float[distanceSensor.sampleSize()];
 		distanceSensor.fetchSample(ultrasonicSamples, 0);
+		botPilot.travel(100000);
 		if(ultrasonicSamples[0] < 500)
 		{
-			
+			botPilot.stop();
+			botPilot.travel(-1000);
+			botPilot.rotate(60);
+			botPilot.travel(100000);
 		}
 	}
 	
